@@ -1,0 +1,40 @@
+/* fonts of the project*/
+
+@font-face {
+    font-family: "yanone";
+    src: url("fonts/yanone.ttf");
+}
+
+@font-face {
+    font-family: "finger";
+    src: url("fonts/finger.ttf");
+}
+
+@mixin fontStyle($type, $size) {
+    font: {
+        family: $type, Arial, Helvetica;
+        size: $size;
+    }
+}
+
+@mixin colorBlue($opacity) {
+    background: rgba(53, 103, 164, $opacity);
+}
+
+@mixin borderAll($size, $type, $color) {
+    border: $size $type $color;
+}
+
+@mixin borderBottom($size, $type, $color) {
+    border-bottom: $size $type $color;
+}
+
+$colorBlueDark: rgba(13, 67, 133, 1);
+$colorGray: #ccc;
+$colorGrayAccent: rgb(221, 221, 221);
+$colorGrayDark: rgb(172, 172, 172);
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
