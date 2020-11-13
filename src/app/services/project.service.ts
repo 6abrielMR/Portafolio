@@ -30,4 +30,10 @@ export class ProjectService {
         );
     }
 
+    getProjects(): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.get(this.url + 'projects', { headers: headers });
+    }
+
 }
