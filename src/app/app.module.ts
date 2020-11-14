@@ -11,6 +11,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AppRouting } from './app.routing';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { DetailComponent } from './components/detail/detail.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     ProjectsComponent,
     CreateComponent,
     ContactComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

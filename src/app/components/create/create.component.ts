@@ -14,8 +14,11 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
+  public saveProject;
   public status: string;
   public filesToUpload: Array<File>;
+  
+  private ms: number;
 
   constructor(
     private _projectService: ProjectService,
@@ -24,6 +27,7 @@ export class CreateComponent implements OnInit {
     this.title = 'Crear Proyecto';
     this.project = new Project('', '', '', '', 2020, '', '');
     this.status = 'initiated';
+    this.ms = 5000;
   }
 
   ngOnInit(): void {
@@ -49,15 +53,16 @@ export class CreateComponent implements OnInit {
             this.filesToUpload,
             'image'
           ).then((result: any) => {
+            this.saveProject = result.project;
+
             this.status = 'success';
-            console.log(result);
             form.reset();
-            this.hideMessageStatus(3000);
+            this.hideMessageStatus(this.ms);
           });
         }
         else {
           this.status = 'failed';
-          this.hideMessageStatus(3000);
+          this.hideMessageStatus(this.ms);
         }
       },
       error => {
